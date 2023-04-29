@@ -1,18 +1,18 @@
-export const fetchUserData = USERNAME => {
-    return fetch(`https://api.github.com/users/${USERNAME}`)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Failed to load data');
-        });
+export const fetchUserData = async username => {
+    const response = await fetch(`https://api.github.com/users/${username}`);
+
+    if (response.ok) {
+        return await response.json();
+    }
+    throw new Error('Failed to load data');
+
 }
 
-export const fetchRepositories = url =>
-    fetch(url)
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error('Failed to load data');
-    });
+export const fetchRepositories = async url => {
+    const response = await fetch(url);
+
+    if (response.ok) {
+        return await response.json();
+    }
+    throw new Error('Failed to load data');
+};

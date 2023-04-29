@@ -4,6 +4,7 @@ export const cleanReposList = () => {
     listElem.innerHTML = '';
 }
 
+
 export const renderRepos = reposList => {
     const reposListElems = reposList
         .map(({ name }) => {
